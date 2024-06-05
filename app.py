@@ -10,6 +10,7 @@ logging.basicConfig(level=logging.DEBUG)
 
 # Cargar el modelo entrenado
 model = joblib.load('model.pkl')
+app.logger.debug('Modelo cargado correctamente.')
 
 @app.route('/predict', methods=['POST'])
 def predict():
@@ -34,3 +35,4 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
